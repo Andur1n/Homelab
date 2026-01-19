@@ -10,7 +10,11 @@ Had a massive win as well — my boss provided us with £150 worth of Amazon vou
 - 60GB Micro-SD Card  
 - USB-C Power Plug  
 - Case  
-- Mini-HDMI to HDMI Cable  
+- Mini-HDMI to HDMI Cable
+
+If you're thinking of picking up a kit yourself I used the starter kit below.
+
+[iRasptek Starter Kit for Raspberry Pi 5 RAM 4GB - 64GB Edition of OS-Bookworm Pre-Loaded (Red&White Case)](https://www.amazon.co.uk/dp/B0D1CT4KZS?ref=ppx_yo2ov_dt_b_fed_asin_title)
 
 ---
 
