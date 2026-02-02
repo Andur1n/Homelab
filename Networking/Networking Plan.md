@@ -33,8 +33,8 @@ This document outlines the current and planned network layout for the home lab e
 - **Gateway:** pfSense `172.16.1.1`
 - **Switch Ports:** 1-4
 - **Devices:**
-  - Den-Main PC (DHCP)
-  - Jen-Main PC (DHCP)
+  - Main PC 1 (DHCP)
+  - Main PC 2 (DHCP)
 - **Purpose:** Home / general devices
 - **Notes:**
   - DHCP managed by pfSense
