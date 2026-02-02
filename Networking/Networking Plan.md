@@ -68,7 +68,7 @@ This document outlines the current and planned network layout for the home lab e
   - VLAN will be tagged to Ubiquiti SSIDs when deployed
   - Fully isolated from lab and general VLANs
 
-![Networking Diagram](link)
+![Networking Diagram](https://github.com/Andur1n/Homelab/blob/main/Networking/Networking%20Diagram.png)
 
 ---
 
