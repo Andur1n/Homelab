@@ -88,4 +88,4 @@ In the meantime I have purchased a bigger case as well as installed the POE hat 
 - [POE Hat](https://thepihut.com/products/power-over-ethernet-hat-g-for-raspberry-pi-5)
 - [Case](https://thepihut.com/products/highpi-pro-5s-case-for-raspberry-pi-5)
 
-<img src="https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/POE%20Hat.jpg" width="250">
+<img src="https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/POE%20Hat.jpg" width="450">
