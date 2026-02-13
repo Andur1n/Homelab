@@ -83,7 +83,7 @@ Since then, over the last three weeks, I’ve seen a significant drop in the blo
 
 ![Current Stats](https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/Stats.png)
 
-In the meantime I have purchased a bigger case as well as installed the POE hat on the Raspberry Pi as show below to future proof it and save that extra power cord needed. Below are the links of the POE Hat and case.
+In the meantime I have purchased a bigger case as well as installed the POE hat on the Raspberry Pi as shown below to future proof it and save that extra power cord needed down the line. Below are the links of the POE Hat and case.
 
 - [POE Hat](https://thepihut.com/products/power-over-ethernet-hat-g-for-raspberry-pi-5)
 - [Case](https://thepihut.com/products/highpi-pro-5s-case-for-raspberry-pi-5)
