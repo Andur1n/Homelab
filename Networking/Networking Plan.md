@@ -19,11 +19,13 @@ This document outlines the current and planned network layout for the home lab e
 - **Subnet:** `172.16.0.0/24`
 - **Gateway:** pfSense `172.16.0.1`
 - **Switch IP:** `172.16.0.2`
-- **Switch Port:** 24 → pfSense connection (trunk)
-- **Purpose:** Management and administration of the lab network
+- **Switch Port:** GigaBitEthernet0/1 → pfSense connection (trunk)
+- **Raspberry 5 - Pi-Hole IP:** `172.16.0.3`
+- **Purpose:** Management and administration of the whole network while Pi-Hole functions as a DNS server forwarding non-blocked requests to `1.1.1.1` and `1.0.0.1`.
 - **Notes:**
   - Trunks all VLANs to pfSense virtual interfaces
-  - Only admin devices should have access
+  - Only admin devices should have access#
+  - Using a SFP Ethernet Switch for the Trunked connection from the PFSense Firewall.
 
 ---
 
@@ -48,13 +50,12 @@ This document outlines the current and planned network layout for the home lab e
 - **Gateway:** pfSense `172.16.2.1`
 - **Switch Ports:** 5-10
 - **Devices:**
-  - Raspberry Pi 5 (Pi-hole) → `172.16.2.2`
-  - Lab Server → `172.16.2.3`
-- **DHCP Pool:** Reserve `172.16.2.2 – 172.16.2.15` for static devices
+  - Lab Server → `172.16.2.2`
+- **DHCP Pool:** Reserve `172.16.2.3 – 172.16.2.15` for VM's running within the lab server.
 - **Purpose:** Dedicated lab environment for cybersecurity and testing
 - **Notes:**
   - pfSense handles DHCP and firewall rules for lab VLAN
-  - VLAN isolated from general/home devices
+  - VLAN isolated from general/home devices due to the potential vulnerable VM's running on the server.
 
 ---
 
@@ -67,9 +68,6 @@ This document outlines the current and planned network layout for the home lab e
 - **Notes:**
   - VLAN will be tagged to Ubiquiti SSIDs when deployed
   - Fully isolated from lab and general VLANs
-
-![Networking Diagram](https://github.com/Andur1n/Homelab/blob/main/Networking/Networking%20Diagram.png)
-
 ---
 
 ## 6. Summary Notes
@@ -80,7 +78,6 @@ This document outlines the current and planned network layout for the home lab e
 - Lab VLAN (VLAN30) is isolated to contain vulnerable machines and testing environments.
 - Future expansions include IoT VLAN, NAS, and wireless networks.
 - Reserved DHCP addresses prevent collisions with static devices.
-- Diagram to be added below once drawn.
 
 ---
 
@@ -93,3 +90,4 @@ This document outlines the current and planned network layout for the home lab e
 
 ---
 
+![Networking Diagram]()
