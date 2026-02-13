@@ -68,3 +68,24 @@ I’ve been running it for two weeks and it currently blocks about 65% of all DN
 As I’m planning to switch my gaming rig to Fedora Linux, I wonder if the percentage of blocked requests will drop. 
 
 To be continued…
+
+## Update - 13/02/2026
+
+We've officially been running Pi-hole for 1.5 months now as our DNS server, and we’ve not had any issues accessing anything we’ve needed.
+
+About three weeks ago, I tried moving my main PC to Fedora Linux; however, this introduced too many complications in terms of how I use my desktop on a daily basis.
+
+In the end, I decided to move back to Windows 11. On the fresh install, I did run the PowerShell script below, which disables a lot of Microsoft tracking features as well as removes much of the bloatware that comes with Windows 11.
+
+[Raphire - Win11Debloat](https://github.com/Raphire/Win11Debloat)
+
+Since then, over the last three weeks, I’ve seen a significant drop in the block percentage — from around 60% down to 41.2%. I might also look at running this script on my partner's PC to see whether this further reduces the number of blocked requests.
+
+![Current Stats]()
+
+In the meantime I have purchased a bigger case as well as installed the POE hat on the Raspberry Pi as show below to future proof it and save that extra power cord needed. Below are the links of the POE Hat and case.
+
+- [POE Hat](https://thepihut.com/products/power-over-ethernet-hat-g-for-raspberry-pi-5)
+- [Case](https://thepihut.com/products/highpi-pro-5s-case-for-raspberry-pi-5)
+
+![POE Hat]()
