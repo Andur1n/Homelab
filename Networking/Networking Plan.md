@@ -90,4 +90,4 @@ This document outlines the current and planned network layout for the home lab e
 
 ---
 
-![Networking Diagram]()
+![Networking Diagram](https://github.com/Andur1n/Homelab/blob/main/Networking/Network%20Diagram%20-%20Updated.png)
