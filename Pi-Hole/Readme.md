@@ -79,13 +79,13 @@ In the end, I decided to move back to Windows 11. On the fresh install, I did ru
 
 [Raphire - Win11Debloat](https://github.com/Raphire/Win11Debloat)
 
-Since then, over the last three weeks, I’ve seen a significant drop in the block percentage — from around 60% down to 41.2%. I might also look at running this script on my partner's PC to see whether this further reduces the number of blocked requests.
+Since then, over the last three weeks, I’ve seen a significant drop in the block percentage — from around 60% down to 41.3%. I might also look at running this script on my partner's PC to see whether this further reduces the number of blocked requests.
 
-![Current Stats]()
+![Current Stats](https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/Stats.png)
 
 In the meantime I have purchased a bigger case as well as installed the POE hat on the Raspberry Pi as show below to future proof it and save that extra power cord needed. Below are the links of the POE Hat and case.
 
 - [POE Hat](https://thepihut.com/products/power-over-ethernet-hat-g-for-raspberry-pi-5)
 - [Case](https://thepihut.com/products/highpi-pro-5s-case-for-raspberry-pi-5)
 
-![POE Hat]()
+![POE Hat](https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/POE%20Hat.jpg)
