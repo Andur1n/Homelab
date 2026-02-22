@@ -61,7 +61,7 @@ The only issue I ran into during setup was that the switch wouldn’t communicat
 
 This switch has two SFP ports. I found a cheap SFP module on Amazon and decided to use it for the uplink port. After further reading, I realised I was quite lucky that it worked — Cisco devices can be picky about third-party SFP modules, although older generation switches tend to be more flexible.
 
-![SFP Picture]()
+![SFP Picture](https://github.com/Andur1n/Homelab/blob/main/Switch/SFP.jpg)
 
 ---
 
