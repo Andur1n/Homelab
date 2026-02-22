@@ -29,13 +29,17 @@ I went with an **Intel i210 NIC**. My priority was supporting high-speed connect
 
 > Minor nitpick: there’s no screw securing the card in place. Not a major issue, as it doesn’t move once the case lid is closed.
 
+![Install](https://github.com/Andur1n/Homelab/blob/main/Firewall/install.jpg)
+
 ---
 
 ## 💿 Installation
 
 First I updated the BIOS of the M720q via the Windows that was already installed on the device. This upgraded it to version **M1UKT78A/1.0.0.120**.
 
-I downloaded the ISO image from the PFSense website and created a bootable USB using **Rufus**. The first issue I encountered was the firewall freezing during boot from USB.
+I downloaded the ISO image from the PFSense website and created a bootable USB using **Rufus**. The first issue I encountered was the firewall freezing during boot from USB with the below error.
+
+![Boot Error](https://github.com/Andur1n/Homelab/blob/main/Firewall/error.jpg)
 
 After some troubleshooting, I discovered PFSense can hang while initializing wireless interfaces. Disabling the wireless card in BIOS (not needed anyway) resolved the problem and allowed installation to proceed.
 
@@ -45,7 +49,9 @@ The installation itself was straightforward:
 - Set ISP router as **WAN**
 - Assigned LAN and WAN interfaces
 
-After installation, the firewall rebooted into the CLI menu. It initially assigned the same subnet range to both WAN and LAN. I temporarily left this as-is and swapped the WAN/LAN cables so the firewall treated the ISP router as LAN. This allowed access to the web interface from my laptop for configuration.
+After installation, the firewall rebooted into the CLI menu. It initially assigned the same subnet range to both WAN and LAN. I temporarily left this as-is and swapped the WAN/LAN cables so the firewall treated the ISP router as LAN. This allowed access to the web interface from my laptop for configuration for the time being.
+
+![Main Menu](https://github.com/Andur1n/Homelab/blob/main/Firewall/post-install.jpg)
 
 ---
 
