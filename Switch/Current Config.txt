@@ -1,0 +1,175 @@
+Cisco3750#show running-config
+Building configuration...
+
+Current configuration : 4182 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Cisco3750
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$RpI6$onsKfApvoHYlwZ1GWkuvD.
+!
+username admin privilege 15 secret 5 $1$FMTx$JF8minNuzdmutABOKqsJx/
+!
+!
+no aaa new-model
+switch 2 provision ws-c3750v2-24ps
+system mtu routing 1500
+ip domain-name lab.local
+!
+!
+!
+!
+crypto pki trustpoint HTTPS_SS_CERT_KEYPAIR
+ enrollment selfsigned
+ serial-number
+ revocation-check none
+ rsakeypair HTTPS_SS_CERT_KEYPAIR
+!
+!
+crypto pki certificate chain HTTPS_SS_CERT_KEYPAIR
+ certificate self-signed 01
+  3082028F 308201F8 A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  53311C30 1A060355 04031313 43697363 6F333735 302E6C61 622E6C6F 63616C31 
+  33300F06 03550405 13083146 35354234 30303020 06092A86 4886F70D 01090216 
+  13436973 636F3337 35302E6C 61622E6C 6F63616C 301E170D 39333033 30313030 
+  32363238 5A170D32 30303130 31303030 3030305A 3053311C 301A0603 55040313 
+  13436973 636F3337 35302E6C 61622E6C 6F63616C 3133300F 06035504 05130831 
+  46353542 34303030 2006092A 864886F7 0D010902 16134369 73636F33 3735302E 
+  6C61622E 6C6F6361 6C30819F 300D0609 2A864886 F70D0101 01050003 818D0030 
+  81890281 8100B172 31E3D937 DA9B56D2 23192CFC F3FFE3F4 9056C233 9052624A 
+  ADF55EFC FC8770B7 4C8750A7 4C35244F 26F60C75 0E9CB236 413C68E4 6F33DAAE 
+  5B2320C2 53C24C0F 927451F1 52477AF8 FB3EF31B 40543A57 A26E08D3 34E048C3 
+  9BBB6264 2E4FCACB 261EF87F F1359C4A 12852B2E CFF707C3 2D1378E8 392E899B 
+  8CD123E7 14D50203 010001A3 73307130 0F060355 1D130101 FF040530 030101FF 
+  301E0603 551D1104 17301582 13436973 636F3337 35302E6C 61622E6C 6F63616C 
+  301F0603 551D2304 18301680 1432AE74 51A309B0 988347D5 8A100D96 E154CB88 
+  83301D06 03551D0E 04160414 32AE7451 A309B098 8347D58A 100D96E1 54CB8883 
+  300D0609 2A864886 F70D0101 04050003 8181005C 6BD434FA EB517DE4 79565923 
+  B614C7C9 DAD750EC 31871778 CEF8CC56 0128E7A6 7657B38D 14C98F57 C93C8628 
+  DD41E1FE 124378AC 73BCD798 4D6F26BC 617FB211 657D24EB E25AF15C 57D8BB65 
+  9024763A A50680F7 39030228 878A8C40 B51DA0DB 0CEF36C1 6DEE0436 B94B56A3 
+  A653D833 917D02E9 2C7ED1CC C6117650 3D821B
+  quit    
+!         
+!         
+!         
+spanning-tree mode pvst
+spanning-tree extend system-id
+!         
+vlan internal allocation policy ascending
+!         
+ip ssh version 2
+!         
+!         
+!         
+interface FastEthernet2/0/1
+ switchport access vlan 10
+!         
+interface FastEthernet2/0/2
+ switchport access vlan 10
+!         
+interface FastEthernet2/0/3
+ switchport access vlan 10
+!         
+interface FastEthernet2/0/4
+ switchport access vlan 10
+!         
+interface FastEthernet2/0/5
+ switchport access vlan 10
+!         
+interface FastEthernet2/0/6
+ switchport access vlan 10
+!         
+interface FastEthernet2/0/7
+ switchport access vlan 20
+!         
+interface FastEthernet2/0/8
+ switchport access vlan 20
+!         
+interface FastEthernet2/0/9
+ switchport access vlan 20
+!         
+interface FastEthernet2/0/10
+ switchport access vlan 20
+!         
+interface FastEthernet2/0/11
+ switchport access vlan 20
+!         
+interface FastEthernet2/0/12
+ switchport access vlan 20
+!         
+interface FastEthernet2/0/13
+ switchport access vlan 30
+!         
+interface FastEthernet2/0/14
+ switchport access vlan 30
+!         
+interface FastEthernet2/0/15
+ switchport access vlan 30
+!         
+interface FastEthernet2/0/16
+ switchport access vlan 30
+!         
+interface FastEthernet2/0/17
+ switchport access vlan 30
+!         
+interface FastEthernet2/0/18
+ switchport access vlan 30
+!         
+interface FastEthernet2/0/19
+ switchport access vlan 40
+!         
+interface FastEthernet2/0/20
+ switchport access vlan 40
+!         
+interface FastEthernet2/0/21
+ switchport access vlan 40
+!         
+interface FastEthernet2/0/22
+ switchport access vlan 40
+!         
+interface FastEthernet2/0/23
+!         
+interface FastEthernet2/0/24
+!         
+interface GigabitEthernet2/0/1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20,30,40
+ switchport mode trunk
+!         
+interface GigabitEthernet2/0/2
+!         
+interface Vlan1
+ ip address 192.168.1.76 255.255.255.0
+!         
+interface Vlan10
+ ip address 172.16.0.2 255.255.255.0
+!         
+ip default-gateway 172.16.0.1
+ip classless
+ip http server
+ip http secure-server
+!         
+!         
+!         
+!         
+!         
+line con 0
+ password YourConsolePassword
+ login    
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!         
+end    
