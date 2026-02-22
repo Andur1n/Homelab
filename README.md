@@ -34,7 +34,7 @@ This phase focuses on building a solid networking foundation. The goal is to pro
 ### Devices in this phase:
 - [**Cisco Catalyst 3750 Switch**](github.com/Andur1n/Homelab/blob/main/Switch/README.md)
 - [**Raspberry Pi** running **Pi-hole**](https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/Readme.md)
-- [**ThinkCentre M720q** with an additional](https://github.com/Andur1n/Homelab/tree/main/Firewall) **Intel I210 NIC**, functioning as a **pfSense firewall**
+- [**ThinkCentre M720q**](https://github.com/Andur1n/Homelab/tree/main/Firewall) with an additional**Intel I210 NIC**, functioning as a **pfSense firewall**
 
 This setup allows:
 - Network segmentation using VLANs
