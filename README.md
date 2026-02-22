@@ -27,14 +27,14 @@ The homelab will be built in **three phases**, each with a specific focus.
 
 ---
 
-## Phase 1 – Networking *(Current Phase)*
+## Phase 1 – Networking ✔️
 
 This phase focuses on building a solid networking foundation. The goal is to properly segment the network using VLANs, improve security, and gain hands-on experience that aligns with my **Network+ studies**.
 
 ### Devices in this phase:
-- **Cisco Catalyst 3750 Switch**
+- [**Cisco Catalyst 3750 Switch**](github.com/Andur1n/Homelab/blob/main/Switch/README.md)
 - [**Raspberry Pi** running **Pi-hole**](https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/Readme.md)
-- **ThinkCentre M720q** with an additional **Intel I210 NIC**, functioning as a **pfSense firewall**
+- [**ThinkCentre M720q** with an additional](https://github.com/Andur1n/Homelab/tree/main/Firewall) **Intel I210 NIC**, functioning as a **pfSense firewall**
 
 This setup allows:
 - Network segmentation using VLANs
@@ -44,7 +44,7 @@ This setup allows:
 
 ---
 
-## Phase 2 – Server
+## Phase 2 – Server *(Currently in progress)*
 
 In this phase, a dedicated server will be introduced to host multiple virtual machines and security tools.
 
