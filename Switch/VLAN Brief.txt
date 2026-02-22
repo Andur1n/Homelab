@@ -1,0 +1,16 @@
+Cisco3750#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa2/0/23, Fa2/0/24, Gi2/0/1, Gi2/0/2
+10   Core                             active    Fa2/0/1, Fa2/0/2, Fa2/0/3, Fa2/0/4, Fa2/0/5
+                                                Fa2/0/6
+20   General                          active    Fa2/0/7, Fa2/0/8, Fa2/0/9, Fa2/0/10, Fa2/0/11
+                                                Fa2/0/12
+30   Lab                              active    Fa2/0/13, Fa2/0/14, Fa2/0/15, Fa2/0/16
+                                                Fa2/0/17, Fa2/0/18
+40   IoT                              active    Fa2/0/19, Fa2/0/20, Fa2/0/21, Fa2/0/22
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
