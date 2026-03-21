@@ -35,12 +35,13 @@ This document outlines the current and planned network layout for the home lab e
 - **Gateway:** pfSense `172.16.1.1`
 - **Switch Ports:** 1-4
 - **Devices:**
-  - Main PC 1 (DHCP)
+  - Main PC 1 (172.16.1.2)
   - Main PC 2 (DHCP)
 - **Purpose:** Home / general devices
 - **Notes:**
-  - DHCP managed by pfSense
-  - VLAN isolated from lab and management VLANs
+  - DHCP managed by pfSense in VLAN10
+  - DNS managed by Pi-Hole in VLAN10
+  - Static IP on desktop to allow management of the homelab via desktop.
 
 ---
 
@@ -50,12 +51,17 @@ This document outlines the current and planned network layout for the home lab e
 - **Gateway:** pfSense `172.16.2.1`
 - **Switch Ports:** 5-10
 - **Devices:**
-  - Lab Server → `172.16.2.2`
-- **DHCP Pool:** Reserve `172.16.2.3 – 172.16.2.15` for VM's running within the lab server.
+  - Wazuh – `172.16.2.2`
+  - Nessus – `172.16.2.3`
+  - Windows Server – `172.16.2.4`
+  - Windows 11 – `172.16.2.5`
+  - Kali Linux – `172.16.2.6`
+  - Metasploitable – `172.16.2.7`
+- **DHCP Pool:** Reserve `172.16.2.3 – 172.16.2.15` for VM's running within the lab server as well as future proof this.
 - **Purpose:** Dedicated lab environment for cybersecurity and testing
 - **Notes:**
-  - pfSense handles DHCP and firewall rules for lab VLAN
-  - VLAN isolated from general/home devices due to the potential vulnerable VM's running on the server.
+  - DHCP managed by pfSense in VLAN10
+  - DNS managed by Pi-Hole in VLAN10
 
 ---
 
@@ -67,7 +73,7 @@ This document outlines the current and planned network layout for the home lab e
 - **Purpose:** IoT and wireless networks via Ubiquiti AP
 - **Notes:**
   - VLAN will be tagged to Ubiquiti SSIDs when deployed
-  - Fully isolated from lab and general VLANs
+  - Alot of TBA and nothing set in stone here.
 ---
 
 ## 6. Summary Notes
@@ -75,7 +81,6 @@ This document outlines the current and planned network layout for the home lab e
 - All VLANs trunked to pfSense, which handles routing, DHCP, and firewall rules.
 - VLANs are designed with `/24` subnets for simplicity and scalability.
 - Management VLAN (VLAN10) is strictly for switch and firewall administration.
-- Lab VLAN (VLAN30) is isolated to contain vulnerable machines and testing environments.
 - Future expansions include IoT VLAN, NAS, and wireless networks.
 - Reserved DHCP addresses prevent collisions with static devices.
 
@@ -83,10 +88,10 @@ This document outlines the current and planned network layout for the home lab e
 
 ## 7. Future Considerations
 
-- Upgrade pfSense port to Gigabit SFP to free physical port
 - Deploy Ubiquiti AP and map SSIDs to VLANs
 - Add NAS and Plex server with separate VLANs
 - Monitor VLAN traffic with pfSense logging, Wazuh, and Splunk
+- Seperate services (Wazuh, Nessus and Splunk) from VLAN30 into it's own VLAN.
 
 ---
 
