@@ -15,10 +15,10 @@
 
 | Rule | Source | Destination | Ports / Protocols | Description |
 |------|--------|-------------|-----------------|------------|
-| Allow | VLAN10 | Pi-hole (172.16.0.3) | DNS (TCP/UDP 53) | Management queries to Pi-hole |
+| Allow | VLAN10 | 172.16.0.3 (Pi-Hole) | DNS (TCP/UDP 53) | Management queries to Pi-hole |
 | Allow | VLAN10 | WAN | HTTP/HTTPS (TCP 80 & 443) | Update services |
 | Allow | VLAN10 | 172.16.0.1 (PFSense) | NTP (UDP 123) | Time Management |
-| Allow | Pi-hole (172.16.0.3) | WAN | DNS (TCP/UDP 53) | Recursive DNS resolution for all VLANs |
+| Allow | 172.16.0.3 (Pi-Hole) | WAN | DNS (TCP/UDP 53) | Recursive DNS resolution for all VLANs |
 | Deny | Any | Any | Any | Default deny all other traffic |
 
 ---
@@ -28,12 +28,12 @@
 
 | Rule | Source | Destination | Ports / Protocols | Description |
 |------|--------|-------------|-----------------|------------|
-| Allow | VLAN20 | Splunk Server (172.16.2.3) | 22, 3389, 5900, 80, 443, 8000 | Access to lab servers (Splunk, RDP, web interfaces) |
-| Allow | VLAN20 | Wazuh Server (172.16.2.4) | 1514, 1515, 55000, 9200 | Communication with EDR server |
-| Allow | VLAN20 | Nessus Server(172.16.2.5) | 8834, 443 | Vulnerability scanner access |
-| Allow | VLAN20 | Pi-hole (172.16.0.3) | DNS (TCP/UDP 53) | Forward all DNS queries through Pi-hole |
+| Allow | VLAN20 | 172.16.2.3 (Splunk Server) | 22, 3389, 5900, 80, 443, 8000 | Access to lab servers (Splunk, RDP, web interfaces) |
+| Allow | VLAN20 | 172.16.2.4 (Wazuh Server) | 1514, 1515, 55000, 9200 | Communication with EDR server |
+| Allow | VLAN20 | 172.16.2.5 (Nessus Server) | 8834, 443 | Vulnerability scanner access |
+| Allow | VLAN20 | 172.16.0.3 (Pi-Hole) | DNS (TCP/UDP 53) | Forward all DNS queries through Pi-hole |
 | Allow | VLAN20 | 172.16.1.1 (PFSense) | NTP (UDP 123) | Time Management |
-| Allow | Main Desktop (172.16.1.2) | VLAN30 | SSH (TCP 22), RDP (TCP 3389), VNC (TCP 5900) | Home Lab Management |
+| Allow | 172.16.1.2 (Main Desktop) | VLAN30 | SSH (TCP 22), RDP (TCP 3389), VNC (TCP 5900) | Home Lab Management |
 | Allow | VLAN20 | WAN | Any | Normal outbound traffic |
 | Deny | Any | Any | Any | Default deny all other traffic |
 
@@ -44,15 +44,15 @@
 
 | Rule | Source | Destination | Ports / Protocols | Description |
 |------|--------|-------------|-----------------|------------|
-| Allow | Splunk (172.16.2.3) | VLAN10 | 8088, 8089, 9997, 8191 | Log ingestion from firewall / management |
-| Allow | Wazuh (172.16.2.4) | VLAN20 | 1514, 1515, 55000, 9200 | EDR communication with general network |
-| Allow | Nessus (172.16.2.5) | VLAN20 | 8834, 443 | Vulnerability scanning / reporting |
-| Allow | Windows Server 2022 (172.16.2.6) | WAN | Updates / package repos | Outbound traffic for updates |
-| Allow | Windows 11 (172.16.2.7) | WAN | Updates / package repos | Outbound traffic for updates |
-| Allow | Kali Linux (172.16.2.8) | WAN | Updates / package repos | Outbound traffic for updates |
-| Allow | VLAN30 | Pi-hole (172.16.0.3) | DNS (TCP/UDP 53) | Forward all DNS queries through Pi-hole |
+| Allow | 172.16.2.3 (Splunk Server) | VLAN10 | 8088, 8089, 9997, 8191 | Log ingestion from firewall / management |
+| Allow | 172.16.2.4 (Wazuh Server) | VLAN20 | 1514, 1515, 55000, 9200 | EDR communication with general network |
+| Allow | 172.16.2.5 (Nessus Server) | VLAN20 | 8834, 443 | Vulnerability scanning / reporting |
+| Allow | 172.16.2.6 (Windows Server 2022) | WAN | Updates / package repos | Outbound traffic for updates |
+| Allow | 172.16.2.7 (Windows 11 Workstation) | WAN | Updates / package repos | Outbound traffic for updates |
+| Allow | 172.16.2.8 (Kali Linux) | WAN | Updates / package repos | Outbound traffic for updates |
+| Allow | VLAN30 | 172.16.0.3 (Pi-Hole) | DNS (TCP/UDP 53) | Forward all DNS queries through Pi-hole |
 | Allow | VLAN30 | 172.16.2.1 (PFSense) | NTP (UDP 123) | Time Management |
-| Deny | Metasploitable (172.16.2.9) | WAN | Any | Isolate vulnerable system |
+| Deny | 172.16.2.9 (Metasploitable) | WAN | Any | Isolate vulnerable system |
 | Deny | Any | Any | Any | Default deny all other traffic |
 
 ---
@@ -62,7 +62,7 @@
 
 | Rule | Source | Destination | Ports / Protocols | Description |
 |------|--------|-------------|-----------------|------------|
-| Allow | VLAN40 | Pi-hole (172.16.0.3) | DNS (TCP/UDP 53) | Forward all DNS queries through Pi-hole |
+| Allow | VLAN40 | 172.16.0.3 (Pi-Hole) | DNS (TCP/UDP 53) | Forward all DNS queries through Pi-hole |
 | Allow | VLAN40 | WAN | DNS, HTTP/HTTPS | Limited outbound access for updates / cloud services |
 | Allow | VLAN40 | 172.16.3.1 (PFSense) | NTP (UDP 123) | Time Management |
 | Deny | VLAN40 | Internal VLANs | Any | Prevent IoT devices from accessing user / management networks |
