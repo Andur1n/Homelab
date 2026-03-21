@@ -51,13 +51,15 @@ This document outlines the current and planned network layout for the home lab e
 - **Gateway:** pfSense `172.16.2.1`
 - **Switch Ports:** 5-10
 - **Devices:**
-  - Wazuh – `172.16.2.2`
-  - Nessus – `172.16.2.3`
-  - Windows Server – `172.16.2.4`
-  - Windows 11 – `172.16.2.5`
-  - Kali Linux – `172.16.2.6`
-  - Metasploitable – `172.16.2.7`
-- **DHCP Pool:** Reserve `172.16.2.3 – 172.16.2.15` for VM's running within the lab server as well as future proof this.
+  - Physical Proxmox Server - `172.16.2.2`
+  - Splunk – `172.16.2.3`
+  - Wazuh – `172.16.2.4`
+  - Nessus – `172.16.2.5`
+  - Windows Server 2022 – `172.16.2.6`
+  - Windows 11 – `172.16.2.7`
+  - Kali Linux – `172.16.2.8`
+  - Metasploitable - `172.16.2.9`
+- **DHCP Pool:** Reserve `172.16.2.2 – 172.16.2.15` for Physical Server + VM's running within the lab server as well as future proof this.
 - **Purpose:** Dedicated lab environment for cybersecurity and testing
 - **Notes:**
   - DHCP managed by pfSense in VLAN10
