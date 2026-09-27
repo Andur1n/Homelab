@@ -49,23 +49,26 @@ This setup allows:
 
 In this phase, a dedicated server will be introduced to host multiple virtual machines and security tools.
 
-### Hardware:
-- **Dell Optiplex 3090** - Gaming Server
+### Hardware:###
+
+**Dell Optiplex 3090** - Gaming Server
 - Intel i5 CPU (10th Generation)
 - 16GB RAM
 - 500GB NVME
 
-- **Dell Poweredge T140** - Lab Server
+**Dell Poweredge T140** - Lab Server
 - Intel Xeon processor E-2200
 - 16GB RAM - (looking to upgrade to 32GB of RAM. Expensive as it's ECC RAM)
 - 2.5TB of HDD Storage
 
-- **QNAP TS-231P3 NAS** - Local NAS for file storage
+**QNAP TS-231P3 NAS** - Local NAS for file storage
 - 4TB Storage (2x 2TB HDD configured in RAID 1)
 - 4GB SODIMM DDR3
 - 32-bit ARM processor
 
+
 ### Planned VMs and services:
+
 - **Splunk** – SIEM monitoring
 - **Wazuh** – Endpoint detection and response
 - **Nessus** – Vulnerability scanning
