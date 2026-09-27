@@ -32,7 +32,8 @@ The homelab will be built in **three phases**, each with a specific focus.
 This phase focuses on building a solid networking foundation. The goal is to properly segment the network using VLANs, improve security, and gain hands-on experience that aligns with my **Network+ studies**.
 
 ### Devices in this phase:
-- [**Cisco Catalyst 3750 Switch**](https://github.com/Andur1n/Homelab/blob/main/Switch/README.md)
+- ~~[**Cisco Catalyst 3750 Switch**](https://github.com/Andur1n/Homelab/blob/main/Switch/README.md)~~
+- [**Mikrotik - CRS112-8P-4S-IN**]
 - [**Raspberry Pi** running **Pi-hole**](https://github.com/Andur1n/Homelab/blob/main/Pi-Hole/README.md)
 - [**ThinkCentre M720q**](https://github.com/Andur1n/Homelab/blob/main/Firewall/README.md) with an additional **Intel I210 NIC**, functioning as a **pfSense firewall**
 
@@ -49,9 +50,20 @@ This setup allows:
 In this phase, a dedicated server will be introduced to host multiple virtual machines and security tools.
 
 ### Hardware:
-- **Dell Optiplex 7060**
-- Intel i5 CPU
-- 64GB RAM
+- **Dell Optiplex 3090** - Gaming Server
+- Intel i5 CPU (10th Generation)
+- 16GB RAM
+- 500GB NVME
+
+- **Dell Poweredge T140** - Lab Server
+- Intel Xeon processor E-2200
+- 16GB RAM - (looking to upgrade to 32GB of RAM. Expensive as it's ECC RAM)
+- 2.5TB of HDD Storage
+
+- **QNAP TS-231P3 NAS** - Local NAS for file storage
+- 4TB Storage (2x 2TB HDD configured in RAID 1)
+- 4GB SODIMM DDR3
+- 32-bit ARM processor
 
 ### Planned VMs and services:
 - **Splunk** – SIEM monitoring
@@ -61,6 +73,8 @@ In this phase, a dedicated server will be introduced to host multiple virtual ma
 - **Windows 11** – Domain-joined workstation
 - **Kali Linux**
 - **Metasploitable**
+- **Minecraft Server** - Move it from a local VM to a server
+- **Bitwarden Password Manager**
 
 This list isn’t definitive, but it provides a solid foundation for building attack and defence scenarios.
 
@@ -74,11 +88,6 @@ Once the core environment is stable (though homelabs are never really “finishe
 - **Ubiquiti Access Point**
   - Proper Wi-Fi coverage
   - Centralised management, likely hosted on the server
-- **NAS**
-  - 2TB–4TB storage
-  - Split usage:
-    - Plex media storage
-    - Photo and general file storage
 
 ---
 
