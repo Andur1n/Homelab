@@ -14,13 +14,13 @@ This document outlines the current and planned network layout for the home lab e
 
 ---
 
-## 2. Core / Management VLAN (VLAN10)
+## 2. Management VLAN (VLAN10)
 
-- **Subnet:** `172.16.0.0/24`
-- **Gateway:** pfSense `172.16.0.1`
-- **Switch IP:** `172.16.0.2`
-- **Switch Port:** GigaBitEthernet0/1 → pfSense connection (trunk)
-- **Raspberry 5 - Pi-Hole IP:** `172.16.0.3`
+- **Subnet:** `172.16.10.0/24`
+- **Gateway:** pfSense `172.16.10.1`
+- **Switch IP:** `172.16.10.2`
+- **Switch Port:** Port 6 and 7, Port 8 is the trunked uplink to PFSense
+- **Raspberry 5 - Pi-Hole IP:** `172.16.10.3`
 - **Purpose:** Management and administration of the whole network while Pi-Hole functions as a DNS server forwarding non-blocked requests to `1.1.1.1` and `1.0.0.1`.
 - **Notes:**
   - Trunks all VLANs to pfSense virtual interfaces
@@ -31,11 +31,11 @@ This document outlines the current and planned network layout for the home lab e
 
 ## 3. General Network VLAN (VLAN20)
 
-- **Subnet:** `172.16.1.0/24`
-- **Gateway:** pfSense `172.16.1.1`
-- **Switch Ports:** 1-4
+- **Subnet:** `172.16.20.0/24`
+- **Gateway:** pfSense `172.16.20.1`
+- **Switch Ports:** Port 1 and 2
 - **Devices:**
-  - Main PC 1 (172.16.1.2)
+  - Main PC 1 (172.16.20.2)
   - Main PC 2 (DHCP)
 - **Purpose:** Home / general devices
 - **Notes:**
@@ -47,19 +47,19 @@ This document outlines the current and planned network layout for the home lab e
 
 ## 4. Lab Network VLAN (VLAN30)
 
-- **Subnet:** `172.16.2.0/24`
-- **Gateway:** pfSense `172.16.2.1`
-- **Switch Ports:** 5-10
+- **Subnet:** `172.16.30.0/24`
+- **Gateway:** pfSense `172.16.30.1`
+- **Switch Ports:** Port 3 and 4
 - **Devices:**
-  - Physical Proxmox Server - `172.16.2.2`
-  - Splunk – `172.16.2.3`
-  - Wazuh – `172.16.2.4`
-  - Nessus – `172.16.2.5`
-  - Windows Server 2022 – `172.16.2.6`
-  - Windows 11 – `172.16.2.7`
-  - Kali Linux – `172.16.2.8`
-  - Metasploitable - `172.16.2.9`
-- **DHCP Pool:** Reserve `172.16.2.2 – 172.16.2.15` for Physical Server + VM's running within the lab server as well as future proof this.
+  - Physical Proxmox Server - `172.16.30.2`
+  - Splunk – `172.16.30.3`
+  - Wazuh – `172.16.30.4`
+  - Nessus – `172.16.30.5`
+  - Windows Server 2022 – `172.16.30.6`
+  - Windows 11 – `172.16.30.7`
+  - Kali Linux – `172.16.30.8`
+  - Metasploitable - `172.16.30.9`
+- **DHCP Pool:** Reserve `172.16.30.2 – 172.16.30.15` for Physical Server + VM's running within the lab server as well as future proof this.
 - **Purpose:** Dedicated lab environment for cybersecurity and testing
 - **Notes:**
   - DHCP managed by pfSense in VLAN10
@@ -69,20 +69,19 @@ This document outlines the current and planned network layout for the home lab e
 
 ## 5. IoT / Future VLAN (VLAN40)
 
-- **Subnet:** `172.16.3.0/24`
-- **Gateway:** pfSense `172.16.3.1`
-- **Switch Ports:** Reserved / future use
-- **Purpose:** IoT and wireless networks via Ubiquiti AP
+- **Subnet:** `172.16.40.0/24`
+- **Gateway:** pfSense `172.16.40.1`
+- **Switch Ports:** Port 5
+- **Purpose:** Segregated IoT devices.
 - **Notes:**
-  - VLAN will be tagged to Ubiquiti SSIDs when deployed
-  - Alot of TBA and nothing set in stone here.
+  - Completely separated from other VLAN's and relying on public DNS resolvers.
 ---
 
 ## 6. Summary Notes
 
 - All VLANs trunked to pfSense, which handles routing, DHCP, and firewall rules.
 - VLANs are designed with `/24` subnets for simplicity and scalability.
-- Management VLAN (VLAN10) is strictly for switch and firewall administration.
+- Management VLAN (VLAN10) is strictly for switch, firewall and DNS administration.
 - Future expansions include IoT VLAN, NAS, and wireless networks.
 - Reserved DHCP addresses prevent collisions with static devices.
 
