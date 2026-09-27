@@ -13,7 +13,7 @@
 ## VLAN 10 – Core / Management (172.16.10.0/24)
 **Purpose:** Administrative access & Pi-hole
 
-| From | To | Destination | Action | Port | Note |
+| From | To | Action | Port | Note |
 |------|--------|-------------|-----------------|------------|----------------|
 | VLAN 20 Subnet | 172.16.10.3 | Allow | 53 | Allows VLAN 20 to make DNS requests |
 | VLAN 30 Subnet | 172.16.10.3 | Allow | 53 | Allows VLAN 30 to make DNS requests |
