@@ -14,7 +14,7 @@
 **Purpose:** Administrative access & Pi-hole
 
 | From | To | Action | Port | Note |
-|------|--------|-------------|-----------------|------------|----------------|
+|------|--------|-------------|-----------------|------------|
 | VLAN 20 Subnet | 172.16.10.3 | Allow | 53 | Allows VLAN 20 to make DNS requests |
 | VLAN 30 Subnet | 172.16.10.3 | Allow | 53 | Allows VLAN 30 to make DNS requests |
 | 172.16.20.2 | VLAN 10 Subnet | Allow | All | Access from Private PC in VLAN 20 |
