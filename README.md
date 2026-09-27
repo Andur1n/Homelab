@@ -49,7 +49,7 @@ This setup allows:
 
 In this phase, a dedicated server will be introduced to host multiple virtual machines and security tools.
 
-### Hardware:###
+### Hardware:
 
 **Dell Optiplex 3090** - Gaming Server
 - Intel i5 CPU (10th Generation)
