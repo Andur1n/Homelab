@@ -10,16 +10,16 @@
 
 ---
 
-## VLAN 10 – Core / Management (172.16.0.0/24)
+## VLAN 10 – Core / Management (172.16.10.0/24)
 **Purpose:** Administrative access & Pi-hole
 
-| Rule | Source | Destination | Ports / Protocols | Description |
-|------|--------|-------------|-----------------|------------|
-| Allow | VLAN10 | 172.16.0.3 (Pi-Hole) | DNS (TCP/UDP 53) | Management queries to Pi-hole |
-| Allow | VLAN10 | WAN | HTTP/HTTPS (TCP 80 & 443) | Update services |
-| Allow | VLAN10 | 172.16.0.1 (PFSense) | NTP (UDP 123) | Time Management |
-| Allow | 172.16.0.3 (Pi-Hole) | WAN | DNS (TCP/UDP 53) | Recursive DNS resolution for all VLANs |
-| Deny | Any | Any | Any | Default deny all other traffic |
+| From | To | Destination | Action | Port | Note |
+|------|--------|-------------|-----------------|------------|----------------|
+| VLAN 20 Subnet | 172.16.10.3 | Allow | 53 | Allows VLAN 20 to make DNS requests |
+| VLAN 30 Subnet | 172.16.10.3 | Allow | 53 | Allows VLAN 30 to make DNS requests |
+| 172.16.20.2 | VLAN 10 Subnet | Allow | All | Access from Private PC in VLAN 20 |
+| VLAN 10 Subnet | * | Allow | All | Allows machines to reach the internet |
+| *	|	VLAN 10 Subnet | Block | All | Default Inbound Deny |
 
 ---
 
