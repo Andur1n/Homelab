@@ -29,7 +29,7 @@ This document outlines the current and planned network layout for the home lab e
 
 ---
 
-## 3. General Network VLAN (VLAN20)
+## 3. Private VLAN (VLAN20)
 
 - **Subnet:** `172.16.20.0/24`
 - **Gateway:** pfSense `172.16.20.1`
